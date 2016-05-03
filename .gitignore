@@ -28,3 +28,6 @@ node_modules
 
 # Emacs
 *~
+
+#
+parse-dashboard-config.json

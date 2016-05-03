@@ -12,11 +12,13 @@ if (!databaseUri) {
 }
 
 var api = new ParseServer({
-  databaseURI: databaseUri || 'mongodb://localhost:27017/dev',
+  databaseURI: databaseUri || 'mongodb://heroku_vjwqtjqm:qhutln30tdfapge2qst07v8pgo@ds013182.mlab.com:13182/heroku_vjwqtjqm',
   cloud: process.env.CLOUD_CODE_MAIN || __dirname + '/cloud/main.js',
   appId: process.env.APP_ID || 'myAppId',
-  masterKey: process.env.MASTER_KEY || '', //Add your master key here. Keep it secret!
-  serverURL: process.env.SERVER_URL || 'http://localhost:1337/parse',  // Don't forget to change to https if needed
+  masterKey: process.env.MASTER_KEY || 'myMasterKey', //Add your master key here. Keep it secret!
+  restAPIKey: process.env.REST_KEY || 'myRestKey',
+  javascriptKey: process.env.JAVASCRIPT_KEY || 'myJavascriptKey',
+  serverURL: process.env.SERVER_URL || 'https://glacial-cliffs-88891.herokuapp.com/parse',  // Don't forget to change to https if needed
   liveQuery: {
     classNames: ["Posts", "Comments"] // List of classes to support for query subscriptions
   }
